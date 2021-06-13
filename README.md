@@ -14,6 +14,7 @@ npm i -g nodemon
 Can download postman (acts as the req.body) to do testing of the api
 
 How to add to Mongoose DB
+The .save section is a sample of how to enter a page after registration
 ```bash
 mongoose.connect("localhost:27017/userDB",{useNewUserParser: true}); //userDB is the DB i want to create
 const userSchema = {
