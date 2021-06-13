@@ -15,29 +15,4 @@ Can download postman (acts as the req.body) to do testing of the api
 
 How to add to Mongoose DB
 The .save section is a sample of how to enter a page after registration
-```bash
-mongoose.connect("localhost:27017/userDB",{useNewUserParser: true}); //userDB is the DB i want to create
-const userSchema = {
-	title: String,
-	contnet: String
-}
 
-const User = new mongoose.model("User", userSchema); //model accepts 2 params, singular name of ur collection and then the schema
-
-app.post("/register", function(req,res){
-	const newUser = new User({ //calling User model
-		title: req.body.username
-		password: req.body.password
-	}); 
-	newUser.save(function(err){
-		if (err) {
-			console.log(err);
-		}
-		
-		else {
-			res.render(whatever page);
-		}
-		
-	});
-});
-```
