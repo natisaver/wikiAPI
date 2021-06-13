@@ -21,13 +21,22 @@ const userSchema = {
 	contnet: String
 }
 
-const User = new mongoose.model("User", userSchema) //model accepts 2 params, singular name of ur collection and then the schema
+const User = new mongoose.model("User", userSchema); //model accepts 2 params, singular name of ur collection and then the schema
 
 app.post("/register", function(req,res){
 	const newUser = new User({ //calling User model
 		title: req.body.username
 		password: req.body.password
-}) 
-newUser.save()
-})
+	}); 
+	newUser.save(function(err){
+		if (err) {
+			console.log(err);
+		}
+		
+		else {
+			res.render(whatever page);
+		}
+		
+	});
+});
 ```
